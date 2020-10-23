@@ -19,6 +19,9 @@
 </head>
 <body>
 <div id="app" class="app">
+    <div class="container">
+        div.row
+    </div>
     @yield('room')
 </div>
 </body>
