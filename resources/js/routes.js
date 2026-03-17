@@ -11,6 +11,9 @@ import Inventory from './components/parameters/Inventory';
 import Myrooms from './components/parameters/Myrooms';
 import Gemclicker from './components/hidden/Gemclicker'
 
+// Salles de jeu
+import CristalInfini from './components/rooms/CristalInfini'
+
 //Vue d'erreurs
 import PageNotFound from './components/errors/PageNotFound'
 
@@ -26,6 +29,7 @@ const router = new VueRouter({
         { path: '/inventory', component: Inventory},
         { path: '/myrooms', component: Myrooms},
         { path: '/gemclicker', component: Gemclicker},
+        { path: '/play/cristal-infini', component: CristalInfini},
         { path: '*', component: PageNotFound},
 
     ]
