@@ -1,0 +1,33 @@
+[phases.setup]
+nixPkgs = [
+    "php82",
+    "php82Extensions.pdo_mysql",
+    "php82Extensions.mbstring",
+    "php82Extensions.openssl",
+    "php82Extensions.tokenizer",
+    "php82Extensions.fileinfo",
+    "php82Extensions.bcmath",
+    "php82Extensions.curl",
+    "php82Extensions.zip",
+    "php82Extensions.xml",
+    "php82Extensions.ctype",
+    "nodejs_20",
+    "nodePackages.npm"
+]
+
+[phases.install]
+cmds = [
+    "composer install --optimize-autoloader --no-dev --no-interaction",
+    "npm ci"
+]
+
+[phases.build]
+cmds = [
+    "npm run prod",
+    "php artisan config:cache",
+    "php artisan route:cache",
+    "php artisan view:cache"
+]
+
+[start]
+cmd = "bash start.sh"
